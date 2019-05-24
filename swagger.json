@@ -1,0 +1,4181 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API",
+    "description": "",
+    "version": ""
+  },
+  "host": "127.0.0.1:8000",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/3d-tails/": {
+      "get": {
+        "operationId": "3d-tails_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "tags": [
+          "3d-tails"
+        ]
+      },
+      "post": {
+        "operationId": "3d-tails_create",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "",
+                  "type": "string"
+                },
+                "upload_time": {
+                  "description": "",
+                  "type": "string"
+                },
+                "creater": {
+                  "description": "",
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "3d-tails"
+        ]
+      }
+    },
+    "/api/3d-tails/{id}/": {
+      "get": {
+        "operationId": "3d-tails_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "A unique integer value identifying this three d tail.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "3d-tails"
+        ]
+      },
+      "put": {
+        "operationId": "3d-tails_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "A unique integer value identifying this three d tail.",
+            "type": "integer"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "",
+                  "type": "string"
+                },
+                "upload_time": {
+                  "description": "",
+                  "type": "string"
+                },
+                "creater": {
+                  "description": "",
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "3d-tails"
+        ]
+      },
+      "patch": {
+        "operationId": "3d-tails_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "A unique integer value identifying this three d tail.",
+            "type": "integer"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "",
+                  "type": "string"
+                },
+                "upload_time": {
+                  "description": "",
+                  "type": "string"
+                },
+                "creater": {
+                  "description": "",
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "3d-tails"
+        ]
+      },
+      "delete": {
+        "operationId": "3d-tails_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "A unique integer value identifying this three d tail.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "3d-tails"
+        ]
+      }
+    },
+    "/api/arango-query/": {
+      "post": {
+        "operationId": "arango-query_create",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "tags": [
+          "arango-query"
+        ]
+      }
+    },
+    "/api/arango-tree/": {
+      "get": {
+        "operationId": "arango-tree_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "tags": [
+          "arango-tree"
+        ]
+      }
+    },
+    "/api/qualitycheck/": {
+      "get": {
+        "operationId": "qualitycheck_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitycheck"
+        ]
+      },
+      "post": {
+        "operationId": "qualitycheck_create",
+        "summary": "",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "验收表编码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments2",
+            "in": "formData",
+            "description": "总包方验收图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments3",
+            "in": "formData",
+            "description": "监理方验收图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments4",
+            "in": "formData",
+            "description": "业务方验收图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments5",
+            "in": "formData",
+            "description": "施工方整改图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptname",
+            "in": "formData",
+            "description": "质量验收名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptno",
+            "in": "formData",
+            "description": "质量验收编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptcontent",
+            "in": "formData",
+            "description": "质量验收内容",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "generalcontresult",
+            "in": "formData",
+            "description": "总包方验收结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "supervisorresult",
+            "in": "formData",
+            "description": "监理方验收人结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ownerresult",
+            "in": "formData",
+            "description": "业主方验收结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "subcontdealresult",
+            "in": "formData",
+            "description": "施工方整改描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dxgc",
+            "in": "formData",
+            "description": "单项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dwgc",
+            "in": "formData",
+            "description": "单位工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fbgc",
+            "in": "formData",
+            "description": "分部工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fxgc",
+            "in": "formData",
+            "description": "分项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "类型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "wbs",
+            "in": "formData",
+            "description": "已停用",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "已停用",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptrequired",
+            "in": "formData",
+            "description": "验收附件",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptrequiredinfo",
+            "in": "formData",
+            "description": "验收附件信息",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "workposition",
+            "in": "formData",
+            "description": "工程部位",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "step",
+            "in": "formData",
+            "description": "验收步骤",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "是否有BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitycheck"
+        ]
+      }
+    },
+    "/api/qualitycheck/{id}/": {
+      "get": {
+        "operationId": "qualitycheck_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitycheck"
+        ]
+      },
+      "put": {
+        "operationId": "qualitycheck_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "A unique integer value identifying this quality check.",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "验收表编码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments2",
+            "in": "formData",
+            "description": "总包方验收图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments3",
+            "in": "formData",
+            "description": "监理方验收图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments4",
+            "in": "formData",
+            "description": "业务方验收图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments5",
+            "in": "formData",
+            "description": "施工方整改图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptname",
+            "in": "formData",
+            "description": "质量验收名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptno",
+            "in": "formData",
+            "description": "质量验收编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptcontent",
+            "in": "formData",
+            "description": "质量验收内容",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "generalcontresult",
+            "in": "formData",
+            "description": "总包方验收结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "supervisorresult",
+            "in": "formData",
+            "description": "监理方验收人结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ownerresult",
+            "in": "formData",
+            "description": "业主方验收结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "subcontdealresult",
+            "in": "formData",
+            "description": "施工方整改描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dxgc",
+            "in": "formData",
+            "description": "单项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dwgc",
+            "in": "formData",
+            "description": "单位工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fbgc",
+            "in": "formData",
+            "description": "分部工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fxgc",
+            "in": "formData",
+            "description": "分项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "类型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "wbs",
+            "in": "formData",
+            "description": "已停用",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "已停用",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptrequired",
+            "in": "formData",
+            "description": "验收附件",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptrequiredinfo",
+            "in": "formData",
+            "description": "验收附件信息",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "workposition",
+            "in": "formData",
+            "description": "工程部位",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "step",
+            "in": "formData",
+            "description": "验收步骤",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "是否有BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitycheck"
+        ]
+      },
+      "patch": {
+        "operationId": "qualitycheck_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "验收表编码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments2",
+            "in": "formData",
+            "description": "总包方验收图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments3",
+            "in": "formData",
+            "description": "监理方验收图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments4",
+            "in": "formData",
+            "description": "业务方验收图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments5",
+            "in": "formData",
+            "description": "施工方整改图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptname",
+            "in": "formData",
+            "description": "质量验收名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptno",
+            "in": "formData",
+            "description": "质量验收编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptcontent",
+            "in": "formData",
+            "description": "质量验收内容",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "generalcontresult",
+            "in": "formData",
+            "description": "总包方验收结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "supervisorresult",
+            "in": "formData",
+            "description": "监理方验收人结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ownerresult",
+            "in": "formData",
+            "description": "业主方验收结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "subcontdealresult",
+            "in": "formData",
+            "description": "施工方整改描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dxgc",
+            "in": "formData",
+            "description": "单项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dwgc",
+            "in": "formData",
+            "description": "单位工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fbgc",
+            "in": "formData",
+            "description": "分部工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fxgc",
+            "in": "formData",
+            "description": "分项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "类型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "wbs",
+            "in": "formData",
+            "description": "已停用",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "已停用",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptrequired",
+            "in": "formData",
+            "description": "验收附件",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "acceptrequiredinfo",
+            "in": "formData",
+            "description": "验收附件信息",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "workposition",
+            "in": "formData",
+            "description": "工程部位",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "step",
+            "in": "formData",
+            "description": "验收步骤",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "是否有BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitycheck"
+        ]
+      },
+      "delete": {
+        "operationId": "qualitycheck_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitycheck"
+        ]
+      }
+    },
+    "/api/qualitycheckstep/": {
+      "get": {
+        "operationId": "qualitycheckstep_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitycheckstep"
+        ]
+      },
+      "post": {
+        "operationId": "qualitycheckstep_create",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "guild",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fkguid",
+            "in": "formData",
+            "description": "质量验收单GUID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "step",
+            "in": "formData",
+            "description": "验收步骤名称",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitycheckstep"
+        ]
+      }
+    },
+    "/api/qualitycheckstep/{id}/": {
+      "get": {
+        "operationId": "qualitycheckstep_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitycheckstep"
+        ]
+      },
+      "put": {
+        "operationId": "qualitycheckstep_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guild",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fkguid",
+            "in": "formData",
+            "description": "质量验收单GUID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "step",
+            "in": "formData",
+            "description": "验收步骤名称",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitycheckstep"
+        ]
+      },
+      "patch": {
+        "operationId": "qualitycheckstep_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guild",
+            "in": "formData",
+            "description": "主键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fkguid",
+            "in": "formData",
+            "description": "质量验收单GUID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "step",
+            "in": "formData",
+            "description": "验收步骤名称",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitycheckstep"
+        ]
+      },
+      "delete": {
+        "operationId": "qualitycheckstep_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitycheckstep"
+        ]
+      }
+    },
+    "/api/qualitychecktree/": {
+      "get": {
+        "operationId": "qualitychecktree_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitychecktree"
+        ]
+      },
+      "post": {
+        "operationId": "qualitychecktree_create",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "节点编码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fkguid",
+            "in": "formData",
+            "description": "外键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "节点类型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "wbs",
+            "in": "formData",
+            "description": "WBS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "父节点ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentname",
+            "in": "formData",
+            "description": "父节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "levelnum",
+            "in": "formData",
+            "description": "节点等级",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pathid",
+            "in": "formData",
+            "description": "节点路径",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "节点是否包含BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "treeid",
+            "in": "formData",
+            "description": "树节点编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitychecktree"
+        ]
+      }
+    },
+    "/api/qualitychecktree/{id}/": {
+      "get": {
+        "operationId": "qualitychecktree_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitychecktree"
+        ]
+      },
+      "put": {
+        "operationId": "qualitychecktree_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "节点编码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fkguid",
+            "in": "formData",
+            "description": "外键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "节点类型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "wbs",
+            "in": "formData",
+            "description": "WBS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "父节点ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentname",
+            "in": "formData",
+            "description": "父节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "levelnum",
+            "in": "formData",
+            "description": "节点等级",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pathid",
+            "in": "formData",
+            "description": "节点路径",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "节点是否包含BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "treeid",
+            "in": "formData",
+            "description": "树节点编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitychecktree"
+        ]
+      },
+      "patch": {
+        "operationId": "qualitychecktree_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "节点编码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fkguid",
+            "in": "formData",
+            "description": "外键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "节点类型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "wbs",
+            "in": "formData",
+            "description": "WBS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "父节点ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentname",
+            "in": "formData",
+            "description": "父节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "levelnum",
+            "in": "formData",
+            "description": "节点等级",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pathid",
+            "in": "formData",
+            "description": "节点路径",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "节点是否包含BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "treeid",
+            "in": "formData",
+            "description": "树节点编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitychecktree"
+        ]
+      },
+      "delete": {
+        "operationId": "qualitychecktree_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitychecktree"
+        ]
+      }
+    },
+    "/api/qualitydetection/": {
+      "get": {
+        "operationId": "qualitydetection_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitydetection"
+        ]
+      },
+      "post": {
+        "operationId": "qualitydetection_create",
+        "summary": "",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "attachments",
+            "in": "formData",
+            "description": "附件",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments2",
+            "in": "formData",
+            "description": "总包方检测图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments3",
+            "in": "formData",
+            "description": "监理方检测图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments4",
+            "in": "formData",
+            "description": "业主方检测图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername4",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname4",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername5",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname5",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkname",
+            "in": "formData",
+            "description": "质量检测名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkno",
+            "in": "formData",
+            "description": "质量检测编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkcontent",
+            "in": "formData",
+            "description": "质量验收内容",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "generalcontresult",
+            "in": "formData",
+            "description": "质量检测内容",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "supervisorresult",
+            "in": "formData",
+            "description": "总包方检测结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ownerresult",
+            "in": "formData",
+            "description": "监理方检测结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkresult",
+            "in": "formData",
+            "description": "业主方检测结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "singleproject",
+            "in": "formData",
+            "description": "单项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "unitproject",
+            "in": "formData",
+            "description": "单位工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "divisionproject",
+            "in": "formData",
+            "description": "分部工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sectionalproject",
+            "in": "formData",
+            "description": "分项工程",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitydetection"
+        ]
+      }
+    },
+    "/api/qualitydetection/{id}/": {
+      "get": {
+        "operationId": "qualitydetection_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitydetection"
+        ]
+      },
+      "put": {
+        "operationId": "qualitydetection_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "attachments",
+            "in": "formData",
+            "description": "附件",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments2",
+            "in": "formData",
+            "description": "总包方检测图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments3",
+            "in": "formData",
+            "description": "监理方检测图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments4",
+            "in": "formData",
+            "description": "业主方检测图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername4",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname4",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername5",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname5",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkname",
+            "in": "formData",
+            "description": "质量检测名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkno",
+            "in": "formData",
+            "description": "质量检测编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkcontent",
+            "in": "formData",
+            "description": "质量验收内容",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "generalcontresult",
+            "in": "formData",
+            "description": "质量检测内容",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "supervisorresult",
+            "in": "formData",
+            "description": "总包方检测结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ownerresult",
+            "in": "formData",
+            "description": "监理方检测结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkresult",
+            "in": "formData",
+            "description": "业主方检测结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "singleproject",
+            "in": "formData",
+            "description": "单项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "unitproject",
+            "in": "formData",
+            "description": "单位工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "divisionproject",
+            "in": "formData",
+            "description": "分部工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sectionalproject",
+            "in": "formData",
+            "description": "分项工程",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitydetection"
+        ]
+      },
+      "patch": {
+        "operationId": "qualitydetection_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments",
+            "in": "formData",
+            "description": "附件",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments2",
+            "in": "formData",
+            "description": "总包方检测图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments3",
+            "in": "formData",
+            "description": "监理方检测图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments4",
+            "in": "formData",
+            "description": "业主方检测图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname",
+            "in": "formData",
+            "description": "总包方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname2",
+            "in": "formData",
+            "description": "监理方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname3",
+            "in": "formData",
+            "description": "业主方",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername4",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname4",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "auditusername5",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "audituserfullname5",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkname",
+            "in": "formData",
+            "description": "质量检测名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkno",
+            "in": "formData",
+            "description": "质量检测编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkcontent",
+            "in": "formData",
+            "description": "质量验收内容",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "generalcontresult",
+            "in": "formData",
+            "description": "质量检测内容",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "supervisorresult",
+            "in": "formData",
+            "description": "总包方检测结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ownerresult",
+            "in": "formData",
+            "description": "监理方检测结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkresult",
+            "in": "formData",
+            "description": "业主方检测结果",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "singleproject",
+            "in": "formData",
+            "description": "单项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "unitproject",
+            "in": "formData",
+            "description": "单位工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "divisionproject",
+            "in": "formData",
+            "description": "分部工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sectionalproject",
+            "in": "formData",
+            "description": "分项工程",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitydetection"
+        ]
+      },
+      "delete": {
+        "operationId": "qualitydetection_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitydetection"
+        ]
+      }
+    },
+    "/api/qualitypatrol/": {
+      "get": {
+        "operationId": "qualitypatrol_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitypatrol"
+        ]
+      },
+      "post": {
+        "operationId": "qualitypatrol_create",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "节点编码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "description": "问题描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "flag",
+            "in": "formData",
+            "description": "检查意见",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments",
+            "in": "formData",
+            "description": "检查图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments2",
+            "in": "formData",
+            "description": "整改图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checker",
+            "in": "formData",
+            "description": "检查人",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkerid",
+            "in": "formData",
+            "description": "检查人用户名",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkrequired",
+            "in": "formData",
+            "description": "检查要求附件",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkrequiredinfo",
+            "in": "formData",
+            "description": "检查要求附件信息",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "singleproject",
+            "in": "formData",
+            "description": "单项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "unitproject",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "devisionproject",
+            "in": "formData",
+            "description": "分部工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sectionalproject",
+            "in": "formData",
+            "description": "分项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "workposition",
+            "in": "formData",
+            "description": "工程部位",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "problemposition",
+            "in": "formData",
+            "description": "问题描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "levelnum",
+            "in": "formData",
+            "description": "表单层级",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pathid",
+            "in": "formData",
+            "description": "表单路径",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "problemsort",
+            "in": "formData",
+            "description": "问题分类",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fixdeadline",
+            "in": "formData",
+            "description": "整改期限",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "reformerdept",
+            "in": "formData",
+            "description": "整改人部门",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "是否含有BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitypatrol"
+        ]
+      }
+    },
+    "/api/qualitypatrol/{id}/": {
+      "get": {
+        "operationId": "qualitypatrol_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitypatrol"
+        ]
+      },
+      "put": {
+        "operationId": "qualitypatrol_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "节点编码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "description": "问题描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "flag",
+            "in": "formData",
+            "description": "检查意见",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments",
+            "in": "formData",
+            "description": "检查图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments2",
+            "in": "formData",
+            "description": "整改图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checker",
+            "in": "formData",
+            "description": "检查人",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkerid",
+            "in": "formData",
+            "description": "检查人用户名",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkrequired",
+            "in": "formData",
+            "description": "检查要求附件",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkrequiredinfo",
+            "in": "formData",
+            "description": "检查要求附件信息",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "singleproject",
+            "in": "formData",
+            "description": "单项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "unitproject",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "devisionproject",
+            "in": "formData",
+            "description": "分部工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sectionalproject",
+            "in": "formData",
+            "description": "分项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "workposition",
+            "in": "formData",
+            "description": "工程部位",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "problemposition",
+            "in": "formData",
+            "description": "问题描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "levelnum",
+            "in": "formData",
+            "description": "表单层级",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pathid",
+            "in": "formData",
+            "description": "表单路径",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "problemsort",
+            "in": "formData",
+            "description": "问题分类",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fixdeadline",
+            "in": "formData",
+            "description": "整改期限",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "reformerdept",
+            "in": "formData",
+            "description": "整改人部门",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "是否含有BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitypatrol"
+        ]
+      },
+      "patch": {
+        "operationId": "qualitypatrol_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "节点编码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "description": "问题描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "flag",
+            "in": "formData",
+            "description": "检查意见",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments",
+            "in": "formData",
+            "description": "检查图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "attachments2",
+            "in": "formData",
+            "description": "整改图片",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checker",
+            "in": "formData",
+            "description": "检查人",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkerid",
+            "in": "formData",
+            "description": "检查人用户名",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkrequired",
+            "in": "formData",
+            "description": "检查要求附件",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "checkrequiredinfo",
+            "in": "formData",
+            "description": "检查要求附件信息",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "singleproject",
+            "in": "formData",
+            "description": "单项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "unitproject",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "devisionproject",
+            "in": "formData",
+            "description": "分部工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sectionalproject",
+            "in": "formData",
+            "description": "分项工程",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "workposition",
+            "in": "formData",
+            "description": "工程部位",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "problemposition",
+            "in": "formData",
+            "description": "问题描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "levelnum",
+            "in": "formData",
+            "description": "表单层级",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pathid",
+            "in": "formData",
+            "description": "表单路径",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "problemsort",
+            "in": "formData",
+            "description": "问题分类",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fixdeadline",
+            "in": "formData",
+            "description": "整改期限",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "reformerdept",
+            "in": "formData",
+            "description": "整改人部门",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "是否含有BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitypatrol"
+        ]
+      },
+      "delete": {
+        "operationId": "qualitypatrol_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitypatrol"
+        ]
+      }
+    },
+    "/api/qualitypatrolproblemsort/": {
+      "get": {
+        "operationId": "qualitypatrolproblemsort_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitypatrolproblemsort"
+        ]
+      },
+      "post": {
+        "operationId": "qualitypatrolproblemsort_create",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "guild",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "problemsort",
+            "in": "formData",
+            "description": "问题分类",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitypatrolproblemsort"
+        ]
+      }
+    },
+    "/api/qualitypatrolproblemsort/{id}/": {
+      "get": {
+        "operationId": "qualitypatrolproblemsort_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitypatrolproblemsort"
+        ]
+      },
+      "put": {
+        "operationId": "qualitypatrolproblemsort_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guild",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "problemsort",
+            "in": "formData",
+            "description": "问题分类",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitypatrolproblemsort"
+        ]
+      },
+      "patch": {
+        "operationId": "qualitypatrolproblemsort_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "guild",
+            "in": "formData",
+            "description": "主键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "problemsort",
+            "in": "formData",
+            "description": "问题分类",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitypatrolproblemsort"
+        ]
+      },
+      "delete": {
+        "operationId": "qualitypatrolproblemsort_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitypatrolproblemsort"
+        ]
+      }
+    },
+    "/api/qualitypatroltree/": {
+      "get": {
+        "operationId": "qualitypatroltree_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitypatroltree"
+        ]
+      },
+      "post": {
+        "operationId": "qualitypatroltree_create",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": false,
+            "in": "formData",
+            "description": "节点编码",
+            "type": "string"
+          },
+          {
+            "name": "pk",
+            "required": false,
+            "in": "formData",
+            "description": "",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fkguid",
+            "in": "formData",
+            "description": "外键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "节点类型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "wbs",
+            "in": "formData",
+            "description": "WBS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "父节点ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentname",
+            "in": "formData",
+            "description": "父节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "levelnum",
+            "in": "formData",
+            "description": "节点等级",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pathid",
+            "in": "formData",
+            "description": "节点路径",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "节点是否包含BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "treeid",
+            "in": "formData",
+            "description": "树节点编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitypatroltree"
+        ]
+      }
+    },
+    "/api/qualitypatroltree/{id}/": {
+      "get": {
+        "operationId": "qualitypatroltree_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitypatroltree"
+        ]
+      },
+      "put": {
+        "operationId": "qualitypatroltree_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "id",
+            "required": false,
+            "in": "formData",
+            "description": "节点编码",
+            "type": "string"
+          },
+          {
+            "name": "pk",
+            "required": false,
+            "in": "formData",
+            "description": "",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fkguid",
+            "in": "formData",
+            "description": "外键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "节点类型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "wbs",
+            "in": "formData",
+            "description": "WBS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "父节点ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentname",
+            "in": "formData",
+            "description": "父节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "levelnum",
+            "in": "formData",
+            "description": "节点等级",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pathid",
+            "in": "formData",
+            "description": "节点路径",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "节点是否包含BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "treeid",
+            "in": "formData",
+            "description": "树节点编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitypatroltree"
+        ]
+      },
+      "patch": {
+        "operationId": "qualitypatroltree_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          },
+          {
+            "name": "id",
+            "required": false,
+            "in": "formData",
+            "description": "",
+            "type": "string"
+          },
+          {
+            "name": "pk",
+            "required": false,
+            "in": "formData",
+            "description": "",
+            "type": "integer"
+          },
+          {
+            "name": "guid",
+            "in": "formData",
+            "description": "主键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fkguid",
+            "in": "formData",
+            "description": "外键",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "节点类型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "wbs",
+            "in": "formData",
+            "description": "WBS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentid",
+            "in": "formData",
+            "description": "父节点ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentname",
+            "in": "formData",
+            "description": "父节点名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "levelnum",
+            "in": "formData",
+            "description": "节点等级",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pathid",
+            "in": "formData",
+            "description": "节点路径",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbim",
+            "in": "formData",
+            "description": "节点是否包含BIM模型",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimname",
+            "in": "formData",
+            "description": "BIM模型名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "bimprojid",
+            "in": "formData",
+            "description": "BIM模型编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "treeid",
+            "in": "formData",
+            "description": "树节点编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "multipart/form-data"
+        ],
+        "tags": [
+          "qualitypatroltree"
+        ]
+      },
+      "delete": {
+        "operationId": "qualitypatroltree_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "索引号",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "qualitypatroltree"
+        ]
+      }
+    },
+    "/api/version/": {
+      "get": {
+        "operationId": "version_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "tags": [
+          "version"
+        ]
+      }
+    },
+    "/api/vi-tree/": {
+      "get": {
+        "operationId": "vi-tree_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "tags": [
+          "vi-tree"
+        ]
+      }
+    },
+    "/api/vig-tree/": {
+      "get": {
+        "operationId": "vig-tree_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "tags": [
+          "vig-tree"
+        ]
+      }
+    },
+    "/api/vigs/": {
+      "get": {
+        "operationId": "vigs_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "vigs"
+        ]
+      },
+      "post": {
+        "operationId": "vigs_create",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "",
+                  "type": "string"
+                },
+                "templatecode": {
+                  "description": "",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "",
+                  "type": "string"
+                },
+                "parentcode": {
+                  "description": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "vigs"
+        ]
+      }
+    },
+    "/api/vigs/{code}/": {
+      "get": {
+        "operationId": "vigs_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "description": "A unique value identifying this vig.",
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "vigs"
+        ]
+      },
+      "put": {
+        "operationId": "vigs_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "description": "A unique value identifying this vig.",
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "",
+                  "type": "string"
+                },
+                "templatecode": {
+                  "description": "",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "",
+                  "type": "string"
+                },
+                "parentcode": {
+                  "description": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "vigs"
+        ]
+      },
+      "patch": {
+        "operationId": "vigs_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "description": "A unique value identifying this vig.",
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "",
+                  "type": "string"
+                },
+                "templatecode": {
+                  "description": "",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "",
+                  "type": "string"
+                },
+                "parentcode": {
+                  "description": "",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "vigs"
+        ]
+      },
+      "delete": {
+        "operationId": "vigs_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "description": "A unique value identifying this vig.",
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "vigs"
+        ]
+      }
+    },
+    "/api/vis/": {
+      "get": {
+        "operationId": "vis_list",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "vis"
+        ]
+      },
+      "post": {
+        "operationId": "vis_create",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "vigcode": {
+                  "description": "",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "",
+                  "type": "string"
+                },
+                "parentvicode": {
+                  "description": "",
+                  "type": "string"
+                },
+                "viclasscode": {
+                  "description": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "vis"
+        ]
+      }
+    },
+    "/api/vis/{code}/": {
+      "get": {
+        "operationId": "vis_read",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "description": "A unique value identifying this vi.",
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "vis"
+        ]
+      },
+      "put": {
+        "operationId": "vis_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "description": "A unique value identifying this vi.",
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "vigcode": {
+                  "description": "",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "",
+                  "type": "string"
+                },
+                "parentvicode": {
+                  "description": "",
+                  "type": "string"
+                },
+                "viclasscode": {
+                  "description": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "vis"
+        ]
+      },
+      "patch": {
+        "operationId": "vis_partial_update",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "description": "A unique value identifying this vi.",
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "vigcode": {
+                  "description": "",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "",
+                  "type": "string"
+                },
+                "parentvicode": {
+                  "description": "",
+                  "type": "string"
+                },
+                "viclasscode": {
+                  "description": "",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "vis"
+        ]
+      },
+      "delete": {
+        "operationId": "vis_delete",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "description": "A unique value identifying this vi.",
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "vis"
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basic": {
+      "type": "basic"
+    }
+  }
+}
